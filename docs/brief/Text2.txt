@@ -1,0 +1,70 @@
+Ovo je sjajan i vrlo jasan koncept. Naziv Concept Laleche i metafora "lako kao mleko" daju odličnu osnovu za brending – osjećaj opuštenosti, lakoće kombinovanja i poverenja u njen estetski izbor. Inspiracija sa nodo.rs (minimalizam, video/GIF dinamika umesto statičnih slika) daje sajtu moderan i luksuzan vizuelni identitet.
+
+Međutim, tehnička postavka koju ste zamislili ima nekoliko ozloglašenih "zamki" u izradi veb-sajtova. Evo ključnih izazova na koje morate obratiti pažnju pre nego što krenete u sam razvoj:
+
+1. Optimizacija i brzina sajta (Video/GIF izazov)
+Sajt nodo.rs koristi kratke video zapise umesto slika kako bi odeća delovala živo.
+
+Problem: Video fajlovi i GIF-ovi su desetostruko teži od običnih slika. Ako na jednoj stranici imate 20 proizvoda sa video-prikazom, sajt će se učitavati izuzetno sporo, što će odbiti kupce i uništiti rangiranje na Guglu (SEO).
+
+Rešenje:
+
+Nemojte koristiti klasične .gif fajlove (oni imaju jako lošu kompresiju i loš kvalitet).
+
+Koristite optimizovane, mutirane, bezzvučne .mp4 ili .webm videe smanjene rezolucije, ili napredne formate poput WebP/WebM.
+
+Implementirajte Lazy Loading (da se video učitava tek kada korisnik skroluje do tog proizvoda).
+
+2. Arhitektura baze podataka vs. "Folderi i podfolderi"
+U opisu ste naveli da na admin panelu postoje folderi i podfolderi za proizvode.
+
+Problem: Sajtovi i e-prodavnice ne rade po principu strukture foldera na računaru (kao u Windows Exploreru), već pomoću baza podataka (Relational Databases). Ako izradite Custom sistem koji simulira foldere, admin panel može postati spor i težak za održavanje.
+
+Rešenje: U bazi se to rešava preko Kategorija/Kolekcija i Varijacija proizvoda (veličina, boja). Za vašu drugaricu interfejs treba da bude maksimalno jednostavan: forma gde odabere kategoriju (npr. Džemperi), unese cenu, doda video-snimke i štiklira dostupne veličine/boje.
+
+3. Logika "On / Off" dugmeta za kategorije
+Ideja da se čitave kategorije (npr. Aksesoari) ugase na jedno dugme je odlična za sezonske ponude, ali nosi skrivene rizik:
+
+SEO i linkovi: Ako klijent ugasi kategoriju na mesec dana, Gugl će taj link smatrati "mrtvim" (Error 404), što šteti rangiranju sajta.
+
+Rešenje: Umesto potpunog brisanja stranice sa mreže, "Off" dugme treba samo da sakrije dugme/kategoriju iz glavnog navigacionog menija i sa početne stranice, dok sama stranica ostaje tehnički dostupna (ili preusmerava na glavnu prodavnicu).
+
+4. Stvaranje potrebe za proizvodom (Storytelling & UX)
+Pošto brend prodaje kuriranu selekciju (pažljivo odabrane komade), sajt ne sme da izgleda kao "svaštara" ili običan AliExpress re-seller.
+
+Izazov: Kako kroz dizajn prenesti vrednost "sve ide lako kao mleko"?
+
+Rešenje na sajtu:
+
+"Complete the Look" / "Laleche Recomends": Na stranici jednog proizvoda (npr. pantalone) odmah ponuditi kaput i džemper koji se savršeno slažu uz njih. Time rešavate problem kupca "sa čim ovo da nosim?".
+
+Upečatljiv tekst (Copywriting) na Landing stranici: Kratak, vizuelno lep uvod koji objašnjava filozofiju brenda – zašto je baš taj materijal i kroj izabran.
+
+5. Korisničko iskustvo na mobilnim telefonima (Mobile-First)
+Preko 80% kupovine odeće u Srbiji i regionu odvija se preko telefona (često direktno sa Instagrama).
+
+Izazov: Automatsko pokretanje (autoplay) videa na mobilnim telefonima često blokiraju sami pregledači (Safari/Chrome) da bi uštedeli internet podatke korisniku, ili videi usporavaju rad telefona.
+
+Rešenje: Dizajn i video funkcionalnosti se moraju primarno testirati na mobilnim telefonima (iOS i Android), a tek onda na računaru.
+
+6. Izbor tehnologije (Kako ovo napraviti?)
+Imate dva glavna puta:
+
+Custom izrada (od nule):
+
+Pravljenje sopstvenog admin panela i frontend-a (npr. React/Next.js + Node.js).
+
+Prednost: Potpuna sloboda u dizajnu i mogućnost da admin panel napravite tačno kako je zamislila.
+
+Mane: Izuzetno skupo (hiljade evra), dugo traje i zahteva stalno održavanje programera.
+
+Gotove platforme (Shopify / WooCommerce / WordPress):
+
+Shopify ili WooCommerce već imaju sve mogućnosti: gashanje/paljenje kategorija, varijacije boja i veličina, odlične admin panele i mobilne aplikacije za vlasnika radnje.
+
+Savet: Najpametnije je uzeti naprednu Shopify ili WordPress temu, prilagoditi je "nodo.rs" minimalističkom stilu (bež/nodo tonovi, čisti fontovi) i ubaciti podršku za video umesto slika. Ovo štedi vreme i novac, a daje profesionalan rezultat.
+
+Sledeći koraci i preporuka:
+Definišite proces plaćanja i dostave: Da li će se plaćati pouzećem ili karticama (što zahteva integraciju bankarskog procesora poput Banke Intesa, WSPay, itd.)?
+
+Priprema medija: Pre lansiranja, svi videi moraju biti snimljeni u istim uslovima (osvetljenje, pozadina, format) kako bi sajt izgledao koherentno kao nodo.rs.

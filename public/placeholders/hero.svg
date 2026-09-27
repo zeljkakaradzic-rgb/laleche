@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125">
+  <defs>
+    <linearGradient id="g" x1="90.95760221444958%" y1="21.32117818244768%" x2="9.04239778555042%" y2="78.67882181755232%">
+      <stop offset="0%" stop-color="#E9DFD0"/>
+      <stop offset="100%" stop-color="#AD9575"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1125" fill="url(#g)"/>
+  <circle cx="450" cy="470" r="230" fill="#ffffff" opacity="0.10"/>
+  <circle cx="620" cy="760" r="140" fill="#2b2825" opacity="0.05"/>
+  <text x="450" y="545" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" letter-spacing="6" fill="#2b2825" opacity="0.82">CONCEPT LALECHE</text>
+  <text x="450" y="600" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" letter-spacing="3" fill="#2b2825" opacity="0.55">FOTO / VIDEO USKORO</text>
+  <text x="450" y="1060" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="5" fill="#2b2825" opacity="0.45">LALECHE</text>
+</svg>

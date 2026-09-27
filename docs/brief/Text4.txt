@@ -1,0 +1,601 @@
+Da. Ovde zapravo ne praviš samo e-prodavnica sa katalogom, nego kurirani fashion-commerce brend. Najveći rizik je da se napravi tehnički lep sajt, a da korisniku nije jasno zašto da kupi baš ono što ConceptLaleche bira.
+
+Pored onoga što si već definisao, ja bih izazove podelio ovako:
+
+1. Pozicioniranje brenda — najveći izazov
+
+Mora se precizno definisati šta je ConceptLaleche.
+
+Ideja „pažljivo odabrani komadi zbog kojih sve ide lako kao mleko“ je dobra osnova, ali trenutno je previše apstraktna.
+
+Treba odgovoriti na:
+
+Zašto kupac ne bi jednostavno otišao na Zara/Mango/Massimo Dutti/itd.?
+Šta konkretno znači „odabrano“?
+Da li Laleche prodaje svoj brend, ili bira proizvode drugih proizvođača?
+Da li je fokus na kvalitetu, dizajnu, materijalu, kombinovanju, praktičnosti ili svemu?
+Da li kupac dolazi po određeni komad ili po rešenje kompletnog outfita?
+
+Ovo poslednje je potencijalno veoma važno.
+
+Umesto:
+
+„Evo 17 kaputa.“
+
+koncept može da bude:
+
+„Evo kaputa koji ćeš nositi uz 80% stvari koje već imaš.“
+
+To već stvara potrebu.
+
+2. Vizuelni identitet
+
+Pošto želiš estetiku nalik nodo.rs, ne bih samo kopirao boje.
+
+Treba definisati:
+
+primarnu boju
+sekundarne boje
+fontove
+tipografsku hijerarhiju
+veličinu fotografija/video sadržaja
+border radius
+dugmad
+hover efekte
+animacije
+način prikaza cena
+ikonografiju
+spacing
+mobile izgled
+
+I najvažnije: koliko luksuzno/minimalistički želiš da izgleda.
+
+Fashion sajt može vrlo lako da izgleda kao generičan Shopify template ako se ovo ne definiše.
+
+3. Video umesto fotografija
+
+Ovo je tehnički mnogo veći izazov nego što deluje.
+
+Ako svaki proizvod ima 5–10 kratkih videa, vrlo brzo dobijaš:
+
+ogromnu količinu podataka
+spor loading
+veliki bandwidth
+probleme na mobilnom internetu
+veliki storage
+spor admin upload.
+
+Ne bih koristio klasičan GIF.
+
+Bolje:
+
+MP4/WebM + poster image + lazy loading + kompresija + CDN.
+
+Na listingu proizvoda video može automatski da se reprodukuje bez zvuka, a na stranici proizvoda da postoji kvalitetniji video.
+
+Treba napraviti i automatsku optimizaciju videa prilikom upload-a.
+
+4. Mobile-first dizajn
+
+Ovo je posebno važno za fashion.
+
+Veliki deo poseta će verovatno dolaziti sa Instagrama/TikToka/Facebooka.
+
+Zato ne treba napraviti:
+
+desktop sajt → pa ga smanjiti za telefon.
+
+Nego obrnuto:
+
+mobile fashion experience → desktop verzija.
+
+Na telefonu bih posebno pazio na:
+
+veličinu videa
+swipe galeriju
+filtere
+izbor veličine
+Add to Cart
+checkout
+sticky dugme za kupovinu.
+5. Katalog proizvoda mora biti mnogo bolje modelovan
+
+Tvoja ideja sa folderima je razumljiva za administraciju, ali nemoj napraviti stvarne foldere kao glavnu logiku baze.
+
+Bolje:
+
+Category
+
+Kaputi
+Pantalone
+Džemperi
+Ponča
+Obuća
+Aksesoari...
+
+Product
+
+naziv
+opis
+cena
+stara cena
+brend
+materijal
+SKU
+status
+kategorija
+veličine
+boje
+zaliha
+video
+slike
+
+Product variant
+
+S
+M
+L
+Black
+Beige itd.
+
+Tako kasnije možeš mnogo lakše da uvedeš filtere i stock.
+
+6. ON/OFF kategorija
+
+Ovo što si zamislio je dobro, ali bih dodao još jedan nivo.
+
+Kategorija:
+
+VISIBLE / HIDDEN
+
+ali proizvod:
+
+DRAFT / ACTIVE / SOLD OUT / ARCHIVED
+
+Jer će se desiti:
+
+Kategorija „Aksesoari“ je ON, ali trenutno nema nijedan proizvod.
+
+Sajt mora znati šta da uradi.
+
+Isto važi za proizvode koji su:
+
+rasprodati
+privremeno nedostupni
+tek pripremljeni
+zakazani za objavu.
+7. Zalihe
+
+Ovo nisi pomenuo, a vrlo brzo će postati problem.
+
+Na primer:
+
+Kaput
+
+36 — 1 kom
+38 — 0 kom
+40 — 2 kom
+42 — 1 kom
+
+Admin mora moći da menja stanje.
+
+Još bolje:
+
+„Još 1 komad u veličini 38“
+
+ali samo ako je podatak stvarno pouzdan.
+
+8. Filteri i pretraga
+
+Kada katalog naraste, kategorije više nisu dovoljne.
+
+Trebaće:
+
+veličina
+boja
+cena
+materijal
+tip proizvoda
+dostupnost
+novo
+sniženo
+kolekcija
+
+I eventualno:
+
+„Laleche izbor“
+
+što može biti važan deo brenda.
+
+9. Cross-selling / kompletiranje outfita
+
+Ovo bih stavio veoma visoko na listu.
+
+Ako prodaješ:
+
+Kaput €149
+
+na stranici proizvoda može da stoji:
+
+Laleche kombinacija
+
+Kaput
+
+pantalone
+džemper
+cipele
+
+i:
+
+„Kompletan izgled“
+
+To direktno podržava filozofiju da je Laleche kurator, a ne samo prodavac garderobe.
+
+10. „Shop the look“
+
+Još bolji koncept:
+
+6
+
+Na videu modela nosi kompletan outfit.
+
+Klikneš na pantalone → proizvod.
+
+Klikneš na kaput → proizvod.
+
+Klikneš na cipele → proizvod.
+
+To je mnogo bliže onome što pokušavaš da napraviš nego klasičan grid:
+
+slika | naziv | cena.
+
+11. Checkout
+
+Treba odlučiti poslovni model:
+
+pouzeće?
+kartice?
+pouzeće + kartice?
+PayPal?
+pouzeće uz potvrdu telefonom?
+kurirska služba?
+cena dostave?
+besplatna dostava iznad X?
+povrat?
+zamena veličine?
+
+Ovo mora biti rešeno pre razvoja jer utiče na arhitekturu sistema.
+
+12. Povrati i zamene
+
+Kod ženske garderobe ovo nije sporedna funkcija.
+
+Admin treba da postoji makar osnovni:
+
+Orders → Return / Exchange
+
+sa statusima:
+
+zahtev primljen
+odobren
+poslato
+primljeno
+refundirano
+zamena izvršena.
+
+Ako se ovo radi ručno preko Instagrama/WhatsAppa, brzo postaje haos.
+
+13. Admin panel ne sme biti samo „upload slika“
+
+Napravio bih ga više kao mini CMS + inventory + order management.
+
+Dashboard:
+
+Danas
+
+12 porudžbina
+€1.240 prodaje
+3 zahteva za zamenu
+5 proizvoda pri kraju zaliha
+
+Proizvodi
+
+kategorije
+proizvodi
+draft
+aktivni
+rasprodati
+
+Porudžbine
+
+Kupci
+
+Promocije
+
+Sadržaj
+
+Podešavanja
+
+14. Zakazivanje objave
+
+Vrlo korisna funkcija:
+
+„Objavi 01.10.2026. u 19:00“
+
+Ona unapred spremi novu kolekciju, a sistem je automatski objavi.
+
+To je posebno korisno ako se radi Instagram kampanja u isto vreme.
+
+15. SEO
+
+Ovo se često potpuno zaboravi.
+
+Svaki proizvod treba da ima:
+
+SEO title
+meta description
+URL slug
+canonical
+Open Graph image
+strukturirane podatke za proizvod
+price
+availability
+brand.
+
+A kategorije takođe treba da budu SEO stranice.
+
+16. Instagram/TikTok kao prodajni kanal
+
+Ako se brend oslanja na društvene mreže, sajt mora biti napravljen kao destinacija za link:
+
+Instagram → video → Laleche proizvod → kupovina
+
+Ne:
+
+Instagram → homepage → pronađi proizvod → pronađi veličinu → kupi.
+
+Idealno je da svaki proizvod ima svoj URL koji može direktno da se pošalje.
+
+17. Analytics
+
+Od prvog dana bih pratio:
+
+posete
+izvor posete
+najgledanije proizvode
+koliko ljudi gleda video
+add-to-cart
+checkout
+kupovina
+abandoned cart
+najtraženije veličine
+najprodavanije kategorije
+conversion rate.
+
+Posebno:
+
+koji video dovodi do kupovine.
+
+To će vremenom biti mnogo vredniji podatak od običnog broja pregleda.
+
+18. Pravna dokumentacija
+
+Za ozbiljan e-commerce treba predvideti:
+
+Uslove korišćenja
+Politiku privatnosti
+Politiku kolačića
+uslove kupovine
+reklamacije
+povrat/zamenu
+dostavu
+obradu ličnih podataka
+račun/fiskalizaciju, u zavisnosti od modela prodaje.
+19. Fiskalizacija i računovodstvo
+
+Ovo treba rešiti pre nego što se napiše checkout.
+
+Treba znati:
+
+ko je prodavac
+gde je registrovan
+da li je PDV obveznik
+kako izdaje račun
+kako se povezuje sa fiskalizacijom
+kako se obrađuju online i pouzeće porudžbine
+šta se dešava kod povrata.
+20. Dostava
+
+Treba napraviti integraciju ili makar standardizovan workflow za kurira.
+
+Porudžbina:
+
+NEW → CONFIRMED → PACKED → SHIPPED → DELIVERED
+
+i eventualno:
+
+RETURNED / CANCELLED
+
+Kasnije može doći API kurirske službe.
+
+Jedan mnogo veći izazov: šta zapravo prodaje Laleche?
+
+Ovo bih rešio pre programiranja.
+
+Postoje najmanje tri moguća modela:
+
+Model A — obična online prodavnica
+
+„Imamo garderobu. Kupi.“
+
+Najlakši za napraviti, ali najmanje diferenciran.
+
+Model B — curated fashion store
+
+„Mi smo izabrali stvari koje bismo i sami nosili.“
+
+Već ima identitet.
+
+Model C — fashion curator / personal shopping koncept
+
+„Ne moraš da razmišljaš šta ide uz šta. Laleche je već napravio izbor.“
+
+Ovo je mnogo interesantnije.
+
+Tada sajt može imati:
+
+Laleche Edit
+
+Laleche Looks
+
+Laleche Picks
+
+Complete the Look
+
+New This Week
+
+Under €100
+
+The Essentials
+
+i slično.
+
+Tu se zapravo stvara ona potreba koju si pomenuo.
+
+Kako bih ja zamislio strukturu sajta
+HOME
+
+Hero video
+
+Laleche
+Carefully chosen. Effortlessly worn.
+
+↓
+
+New arrivals
+
+↓
+
+The Laleche Edit
+
+↓
+
+Shop the look
+
+↓
+
+Kategorije
+
+Kaputi | Pantalone | Džemperi | Ponča | Haljine | Obuća | Aksesoari...
+
+↓
+
+Zašto Laleche?
+
+Less searching.
+Better choosing.
+Everything flows.
+
+↓
+
+Instagram/social proof
+
+SHOP
+
+Kategorije + filteri.
+
+PRODUCT
+
+Veliki video.
+
+Naziv
+Cena
+Boja
+Veličina
+
+Add to bag
+
+↓
+
+Opis
+
+↓
+
+Materijal
+
+↓
+
+Size guide
+
+↓
+
+Complete the look
+
+↓
+
+Slični proizvodi.
+
+ADMIN
+
+Dashboard
+
+Products
+
+Categories
+
+Collections
+
+Orders
+
+Customers
+
+Promotions
+
+Content
+
+Settings
+
+I još jedna stvar koju bih promenio u tvojoj početnoj ideji
+
+Nemoj adminu dati koncept:
+
+„Folder → podfolder → slike + komentari + veličine.“
+
+To će raditi na početku, ali će za 300 proizvoda postati nepraktično.
+
+Napravio bih vizuelni product manager:
+
++ NOVI PROIZVOD
+
+→ Naziv
+→ Kategorija
+→ Kolekcija
+→ Cena
+→ Opis
+→ Materijal
+→ Boje
+→ Veličine
+→ Zaliha po veličini/boji
+→ Upload video
+→ Upload fotografija
+→ Redosled sadržaja
+→ SEO
+→ ON/OFF
+→ Preview
+→ Save Draft
+→ Publish
+
+I posebno:
+
+CATEGORY MANAGEMENT
+
+Kategorija	Status	Proizvodi
+Kaputi	ON	24
+Pantalone	ON	18
+Džemperi	ON	31
+Ponča	OFF	0
+Aksesoari	OFF	0
+
+To je mnogo skalabilnije.
+
+Najveći izazov, međutim, nije programiranje. To je da se koncept „pažljivo odabrane stvari zbog kojih je oblačenje lako“ pretvori u konkretan korisnički doživljaj. Ako to ne rešimo, dobićete lep e-shop koji je samo još jedan katalog garderobe. Ako to rešimo, onda i video, „Laleche Edit“, shop-the-look, preporuke i sam admin imaju jasnu svrhu.

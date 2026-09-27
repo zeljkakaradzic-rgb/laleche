@@ -1,0 +1,61 @@
+Glavni izazovi za kreiranje sajta Concept Laleche (pored onoga što si već opisala):
+1. Mediji – kratki videi / GIF-ovi umesto klasičnih slika
+
+Optimizacija performansi: kratki videi (ili autoplay GIF/video petlje) su znatno teži od statičnih slika. Treba kompresija, lazy loading, different formati (WebM/MP4 + fallback), i pažnja na mobilne uređaje i spore mreže.
+Hosting i CDN troškovi: video sadržaj brzo troši bandwidth i storage.
+UX: video mora da se učitava brzo, da se ne “zaguši” stranica, da radi tiho (muted) i da se lepo ponaša na hover/touch.
+Admin upload: mora da postoji jednostavan način da ona uploaduje i upravlja video fajlovima (ili konvertuje u optimizovane verzije).
+
+2. Admin panel – struktura foldera + on/off + varijante
+
+Hijerarhija: odeljci (kaputi, pantalone, džemperi, ponča, obuća, aksesoari…) → podfolderi po proizvodu → unutar toga slike/video, opis, cene, veličine, boje, komentari.
+On/Off dugme po odeljku mora da real-time (ili brzo) utiče na front-end navigaciju i filtere.
+Upravljanje varijantama (veličina + boja + zaliha) mora biti jednostavno za nju, a robustno za sistem (da se ne prave greške u zalihama ili cenama).
+UX admin panela: ako nije dovoljno intuitivan, biće frustracija i greške pri unosu.
+
+3. Front-end dizajn i “premium” osećaj
+
+Stil po nodo.rs (Nodo Lusso) – čist, elegantan, mek, fokus na materijalu i detalju.
+Treba postići isti “lako kao mleko” osećaj: vizuelno lagano, brzo, luksuzno, a ne pretrpano.
+Landing page mora da stvara želju/potrebu, a ne samo da prikazuje proizvode (storytelling, mood, lifestyle).
+Responsive + performance: sve mora savršeno da radi na mobilnom (većina kupaca dolazi odatle).
+
+4. E-commerce logika (ako ide do prave prodaje)
+
+Korpa, checkout, plaćanja (kartice, eventualno keš/pouzeće u Srbiji), dostava, povraćaji.
+Zalihe i varijante u realnom vremenu.
+SEO (posebno bitno za novi brend).
+Email notifikacije, porudžbine, admin pregled porudžbina.
+
+5. Tehnički i operativni izazovi
+
+Custom vs platforma: da li raditi potpuno custom (više kontrole, skuplje, duže) ili na Shopify / WooCommerce / custom headless rešenju. Custom folder + on/off + video-first struktura često bolje ide na custom ili headless pristupu.
+Bezbednost admin panela (login, prava, zaštita upload-a).
+Skalabilnost: kada katalog poraste, pretraga, filteri i brzina moraju ostati dobri.
+Održavanje: ko će da radi update-e, backup, security patch-eve posle lansiranja.
+Lokalizacija: jezik (srpski + eventualno engleski), valute, porezi, dostava unutar Srbije/regiona.
+
+6. Biznis / sadržajni izazovi
+
+Kreiranje potrebe: sajt mora da proda osećaj i lifestyle, ne samo odeću. To zahteva dobar copy, fotografiju/video i storytelling.
+Kontinuirano ažuriranje: ona mora redovno da kači nove stvari i da drži odeljke aktuelnim (on/off funkcija pomaže, ali i dalje zahteva disciplinu).
+Brendiranje: ime ConceptLaleche / Laleche mora da se jasno poveže sa “lako kao mleko” porukom na celom sajtu.
+
+7. Vreme i budžet
+
+Video-first e-commerce + custom admin struktura + premium dizajn = nije jeftin ni brz projekat.
+Najčešće se potcenjuje vreme za:
+optimizaciju mediija,
+testiranje na različitim uređajima,
+fine-tuning admin panela da bude stvarno upotrebljiv,
+checkout i plaćanja.
+
+
+Najkritičnije tačke su:
+
+performans sa video sadržajem,
+jednostavnost i pouzdanost admin panela,
+postizanje pravog “premium + lagano” osećaja kao na nodo.rs,
+odluka custom vs platforma.
+
+Ako želiš, mogu da ti razradim konkretnije opcije (Shopify + custom admin, headless, potpuno custom) ili prioritizaciju šta prvo uraditi za MVP.

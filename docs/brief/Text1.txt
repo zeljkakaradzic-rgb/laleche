@@ -1,0 +1,14 @@
+Concept Laleche
+
+Jedna moja jako dobra drugarica želi da napravi sajt koji je e prodavnica. U pitanju je brend koji se zove ConceptLaleche. Specifičnosti koncepta Laceche je što odabira najbolji dizajn, detalj, materijal kako bi . Vrednost koju kupci treba da osete su da uz garderobu koju im preporučuje Laleche sve ići lako kao mleko, jer su sve stvari pažljivo odabirane. Suština je da je potrebno stvoriti potrebu za ovim proizvodima.
+
+Treba da sajt napravimo tako da imamo dve stranice, jedna je admin panel, na njemu će ona kačiti slike i opise i cene, a drugi je web stranica koju će videti korisnici. Web stranica ima lending page, prodavnicu i kontakt. Prodavnica treba da ima odeljke za kapute, pantalone, džempere, ponča i sve ostale opcije koje postoje za žensku odeću, obuću i aksesoare. Stranica admin panel gde se kače stvari treba da ima foldere za sve ove odeljke gore, a gde će se nalaziti za svaki proizvod podfolderi u kojima će se uploadovati slike, i unositi komentari i veličine i boje. Kod foldera sa odeljcima treba da stoji dugme on i off. Kada je on onda je na web stranici taj odeljak vidljiv, a kada je off onda u ponudi uopšte nema tog odeljka, npr aksesoari.
+
+Stil sajta po pitanju boja je nodo.rs.
+
+Za izgled sajta treba da se uzme neki najbolji izgled sa tržišta.
+
+Neće biti obične slike nego će biti kao gifovi odnosno kratki videi kapo što su na sajtu nodo.rs.
+
+Napiši mi koji su još izazovi za kreiranje ovog sajta 
+
