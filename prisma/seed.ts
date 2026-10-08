@@ -17,14 +17,16 @@ async function main() {
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@laleche.rs";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "laleche2026";
 
-  await db.adminUser.upsert({
-    where: { email: adminEmail },
-    update: {},
-    create: {
-      email: adminEmail,
-      passwordHash: await bcrypt.hash(adminPassword, 10),
-    },
-  });
+await db.adminUser.upsert({
+  where: { email: adminEmail },
+  update: {
+    passwordHash: await bcrypt.hash(adminPassword, 10),
+  },
+  create: {
+    email: adminEmail,
+    passwordHash: await bcrypt.hash(adminPassword, 10),
+  },
+});
   console.log(`Admin nalog: ${adminEmail} / ${adminPassword}`);
 
   const categoryBySlug = new Map<string, string>();
