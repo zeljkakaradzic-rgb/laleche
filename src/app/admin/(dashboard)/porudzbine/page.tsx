@@ -1,4 +1,3 @@
-tsx
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { formatPrice } from "@/lib/format";
@@ -37,40 +36,66 @@ export default async function AdminOrdersPage() {
               href={`/admin/porudzbine/${order.id}`}
               className="flex flex-wrap items-center justify-between gap-4 px-4 py-4 hover:bg-[var(--color-accent-soft)]"
             >
-              <div className="min-w-0">
-                <p className="font-serif-display">{order.customerName}</p>
+              <div className="min-w-0 flex-1">
+                <p className="font-serif-display">
+                  {order.customerName}
+                </p>
 
                 <p className="mt-1 text-sm text-[var(--color-ink-soft)]">
                   {order.items.length} stavki · {order.city}
                 </p>
 
-                <div className="mt-2 space-y-1 text-sm">
-                  <p>
-                    <span className="text-[var(--color-taupe)]">Email: </span>
+                <div className="mt-3 space-y-1 text-sm">
+                  <p className="break-words">
+                    <span className="text-[var(--color-taupe)]">
+                      Email:{" "}
+                    </span>
                     {order.email || "Nije unet"}
+                  </p>
+
+                  <p>
+                    <span className="text-[var(--color-taupe)]">
+                      Telefon:{" "}
+                    </span>
+                    {order.phone}
                   </p>
 
                   <p>
                     <span className="text-[var(--color-taupe)]">
                       Adresa:{" "}
                     </span>
-                    {order.address}, {order.postalCode || "Bez poštanskog broja"}{" "}
+                    {order.address}
+                  </p>
+
+                  <p>
+                    <span className="text-[var(--color-taupe)]">
+                      Grad:{" "}
+                    </span>
                     {order.city}
+                  </p>
+
+                  <p>
+                    <span className="text-[var(--color-taupe)]">
+                      Poštanski broj:{" "}
+                    </span>
+                    {order.postalCode || "Nije unet"}
                   </p>
                 </div>
               </div>
 
-              <span className="font-medium">
-                {formatPrice(order.total)}
-              </span>
+              <div className="flex flex-col gap-2 sm:items-end">
+                <span className="font-medium">
+                  {formatPrice(order.total)}
+                </span>
 
-              <span className="label-caps text-[var(--color-taupe)]">
-                {STATUS_LABEL[order.status] ?? order.status}
-              </span>
+                <span className="label-caps text-[var(--color-taupe)]">
+                  {STATUS_LABEL[order.status] ?? order.status}
+                </span>
 
-              <span className="text-sm text-[var(--color-taupe)]">
-                {order.createdAt.toLocaleDateString("sr-RS")}
-              </span>
+                <span className="text-sm text-[var(--color-taupe)]">
+                  {order.createdAt.toLocaleDateString("sr-RS")}
+                </span>
+              </div>
             </Link>
           ))
         )}
