@@ -10,7 +10,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="container-page py-20 text-center">
-        <h1 className="font-serif-display text-2xl">Torba je prazna</h1>
+        <h1 className="font-serif-display text-2xl">Korpa je prazna</h1>
         <p className="mt-3 text-[var(--color-ink-soft)]">
           Pogledaj prodavnicu i pronađi svoj sledeći komad.
         </p>
@@ -23,7 +23,7 @@ export default function CartPage() {
 
   return (
     <div className="container-page py-12">
-      <h1 className="font-serif-display text-3xl">Torba</h1>
+      <h1 className="font-serif-display text-3xl">Korpa/h1>
 
       <div className="mt-8 divide-y divide-[var(--color-line)]">
         {items.map((item) => (
