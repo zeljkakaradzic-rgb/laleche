@@ -23,7 +23,7 @@ export default function CartPage() {
 
   return (
     <div className="container-page py-12">
-      <h1 className="font-serif-display text-3xl">Korpa/h1>
+<h1 className="font-serif-display text-3xl">Korpa</h1>
 
       <div className="mt-8 divide-y divide-[var(--color-line)]">
         {items.map((item) => (
