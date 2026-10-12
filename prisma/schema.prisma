@@ -108,18 +108,22 @@ model ProductMedia {
   sortOrder Int       @default(0)
 }
 
+
 model Order {
   id            String      @id @default(cuid())
   customerName  String
   phone         String
+  email         String?
   address       String
   city          String
+  postalCode    String?
   note          String?
   status        OrderStatus @default(NEW)
   total         Float
   items         OrderItem[]
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
+
 }
 
 model OrderItem {
