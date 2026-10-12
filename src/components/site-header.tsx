@@ -54,9 +54,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           </Link>
         </nav>
 
-        <Link href="/korpa" className="label-caps">
-          Torba{totalCount > 0 ? ` (${totalCount})` : ""}
-        </Link>
+       <Link href="/korpa" className="label-caps">
+  Korpa{totalCount > 0 ? ` (${totalCount})` : ""}
+</Link>
       </div>
 
       {open ? (
