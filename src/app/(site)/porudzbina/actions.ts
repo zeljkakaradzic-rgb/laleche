@@ -1,13 +1,16 @@
+
 "use server";
 
 import { z } from "zod";
 import { db } from "@/lib/db";
 
 const orderSchema = z.object({
-  customerName: z.string().min(2).max(120),
-  phone: z.string().min(6).max(30),
-  address: z.string().min(3).max(200),
-  city: z.string().min(2).max(100),
+  customerName: z.string().trim().min(2).max(120),
+  phone: z.string().trim().min(6).max(30),
+  email: z.string().trim().email("Unesi ispravnu email adresu").max(254),
+  address: z.string().trim().min(3).max(200),
+  city: z.string().trim().min(2).max(100),
+  postalCode: z.string().trim().min(3).max(20),
   note: z.string().max(500).optional(),
   items: z
     .array(
@@ -20,20 +23,29 @@ const orderSchema = z.object({
 });
 
 export type CreateOrderInput = z.infer<typeof orderSchema>;
+
 export type CreateOrderResult =
   | { ok: true; orderId: string; total: number }
   | { ok: false; error: string };
 
-export async function createOrder(input: CreateOrderInput): Promise<CreateOrderResult> {
+export async function createOrder(
+  input: CreateOrderInput,
+): Promise<CreateOrderResult> {
   const parsed = orderSchema.safeParse(input);
+
   if (!parsed.success) {
-    return { ok: false, error: "Podaci u formi nisu validni. Proveri sva polja." };
+    return {
+      ok: false,
+      error: "Proveri podatke, email adresu i poštanski broj.",
+    };
   }
+
   const data = parsed.data;
 
   try {
     const result = await db.$transaction(async (tx) => {
       const variantIds = data.items.map((i) => i.variantId);
+
       const variants = await tx.productVariant.findMany({
         where: { id: { in: variantIds } },
         include: { product: true },
@@ -42,16 +54,20 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
       const variantById = new Map(variants.map((v) => [v.id, v]));
 
       let total = 0;
+
       for (const item of data.items) {
         const variant = variantById.get(item.variantId);
+
         if (!variant) {
           throw new Error("Jedan od proizvoda u torbi više nije dostupan.");
         }
+
         if (variant.stock < item.quantity) {
           throw new Error(
             `Nema dovoljno na stanju za "${variant.product.name}" (${variant.size}, ${variant.color}).`,
           );
         }
+
         total += variant.product.price * item.quantity;
       }
 
@@ -59,14 +75,17 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         data: {
           customerName: data.customerName,
           phone: data.phone,
+          email: data.email,
           address: data.address,
           city: data.city,
+          postalCode: data.postalCode,
           note: data.note,
           total,
           status: "NEW",
           items: {
             create: data.items.map((item) => {
               const variant = variantById.get(item.variantId)!;
+
               return {
                 productId: variant.productId,
                 variantId: variant.id,
@@ -88,9 +107,17 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
       return { orderId: order.id, total };
     });
 
-    return { ok: true, orderId: result.orderId, total: result.total };
+    return {
+      ok: true,
+      orderId: result.orderId,
+      total: result.total,
+    };
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Greška prilikom kreiranja porudžbine.";
+    const message =
+      err instanceof Error
+        ? err.message
+        : "Greška prilikom kreiranja porudžbine.";
+
     return { ok: false, error: message };
   }
 }
