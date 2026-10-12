@@ -51,7 +51,6 @@ export default function CheckoutPage() {
       setSubmitting(false);
     }
   }
-
   if (confirmed) {
     return (
       <div className="container-page py-20 text-center">
