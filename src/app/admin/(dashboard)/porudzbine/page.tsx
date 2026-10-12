@@ -1,4 +1,4 @@
-```tsx
+tsx
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { formatPrice } from "@/lib/format";
@@ -78,4 +78,3 @@ export default async function AdminOrdersPage() {
     </div>
   );
 }
-```
