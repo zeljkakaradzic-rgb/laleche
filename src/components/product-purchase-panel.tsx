@@ -98,8 +98,8 @@ export function ProductPurchasePanel({
         {soldOut
           ? "Rasprodato"
           : justAdded
-            ? "Dodato u torbu ✓"
-            : `Dodaj u torbu — ${formatPrice(price)}`}
+            ? "Dodato u Korpu ✓"
+            : `Dodaj u Korpu — ${formatPrice(price)}`}
       </button>
     </div>
   );
